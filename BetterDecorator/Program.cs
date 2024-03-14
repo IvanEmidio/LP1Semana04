@@ -38,13 +38,22 @@ namespace BetterDecorator
             return resumo;
         }
 
+        private static string Decor()
+        {
+            return (Decor("User did not specify args !", '=', 3));
+        }
+
         /// <summary>
         /// recebe uma string e imprime
         /// </summary>
         static void Main(string[] args)
         
         {
-            Console.WriteLine(Decor("Lost Forever", '.', 3 ));
+            if (args.Length == 3)
+                Console.WriteLine(Decor(args[0], char.Parse(args[1])
+            , int.Parse(args[2])));
+            else
+                Console.WriteLine(Decor());
             
         }
     }
